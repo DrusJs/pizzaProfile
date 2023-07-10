@@ -83,3 +83,22 @@ function setActionModal() {
 
 setActionModal();
 //basket
+
+//profile
+const profilenav = document.querySelectorAll(".profile-nav__list");
+const profilecontent = document.querySelectorAll(".profile__container-page");
+for (let i = 0; i < 2; i++) {
+    profilenav[i].addEventListener("click", (e) => {
+        document.querySelector(".profile-nav__list.active").classList.remove("active");
+        e.currentTarget.classList.add("active");
+        document.querySelector(".profile__container-page.active").classList.remove("active");
+        profilecontent[i].classList.add("active");
+    });
+  }
+
+const openAccordBtn = document.querySelectorAll(".show-hide__button");
+openAccordBtn.forEach(el => {
+    el.addEventListener("click", (e) => {
+        e.currentTarget.parentElement.parentElement.parentElement.classList.toggle("active");
+    })
+})
