@@ -9,6 +9,30 @@ const locationSelect = document.getElementById("location-select");
 const locationField = document.getElementById("location-select-value");
 const locationOptions = document.querySelectorAll(".location-select__list");
 
+const navBlock = document.getElementById("nav");
+const navSelect = document.getElementById("nav-select");
+const navOptions = document.querySelectorAll(".nav-select__list");
+
+navBlock.addEventListener("mouseover", () => {
+    navSelect.classList.add("active");
+});
+navSelect.addEventListener("mouseover", () => {
+    navSelect.classList.add("active");
+});
+navBlock.addEventListener("mouseout", () => {
+    navSelect.classList.remove("active");
+});
+navSelect.addEventListener("mouseout", () => {
+    navSelect.classList.remove("active");
+});
+navOptions.forEach(el => {
+   el.addEventListener("click", (e) => {
+        navField.innerHTML = e.currentTarget.innerHTML;
+        navSelect.classList.remove("active");
+   });
+});
+
+
 burgerButton.addEventListener("click", ()=>{
     burgerButton.classList.toggle("active");
     if (burgerButton.classList.contains("active")) {
